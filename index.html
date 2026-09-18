@@ -9,32 +9,27 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; }
         h1, h2, h3 { color: #d92128; /* ROCKTAPE 紅色 */ }
         h1 { font-size: 28px; border-bottom: 2px solid #d92128; padding-bottom: 10px; margin-bottom: 30px;}
-        h2 { font-size: 22px; margin-top: 40px; background: #f1f1f1; padding: 10px 15px; border-left: 5px solid #d92128; }
+        
+        /* 🌟 全新升級：課程大標題 (黑底+粗紅邊+紅字) */
+        h2 { 
+            font-size: 22px; 
+            margin-top: 45px; 
+            margin-bottom: 25px;
+            background-color: #111; 
+            color: #d92128; 
+            font-weight: 900; 
+            padding: 15px 20px; 
+            border-left: 8px solid #d92128; 
+            border-radius: 0 6px 6px 0;
+            letter-spacing: 1px;
+        }
+        
         h3 { font-size: 18px; margin-top: 20px; color: #000; font-weight: bold; }
         .intro { font-size: 18px; font-weight: bold; color: #555; text-align: center; margin-bottom: 40px; }
         .highlight { font-weight: bold; color: #d92128; }
         ul { margin-bottom: 20px; }
         li { margin-bottom: 8px; }
         
-        /* 課程資訊區塊樣式 */
-        .course-info-box {
-            background-color: #f9f9f9;
-            padding: 20px 25px;
-            border-radius: 8px;
-            border-left: 5px solid #d92128;
-            margin-top: 25px;
-            margin-bottom: 30px;
-        }
-        .course-info-box p { margin: 8px 0; }
-        .course-info-box .info-label { font-weight: bold; color: #333; display: inline-block; width: 120px; }
-        .course-info-box .fee-note { font-size: 14px; color: #666; display: block; margin-left: 120px; margin-top: 4px; }
-        .course-info-box .bank-info { margin-left: 120px; margin-top: 4px; line-height: 1.8; }
-        
-        @media (max-width: 600px) {
-            .course-info-box .info-label { display: block; width: 100%; margin-bottom: 4px; color: #d92128; }
-            .course-info-box .fee-note, .course-info-box .bank-info { margin-left: 0; }
-        }
-
         /* 影片響應式區塊樣式 */
         .video-container {
             position: relative;
@@ -45,17 +40,81 @@
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* 一般課程資訊卡片 */
+        .course-info-box {
+            background-color: #fff;
+            border: 2px solid #d92128;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(217, 33, 40, 0.1);
+            overflow: hidden; 
+        }
+        .course-info-header {
+            background-color: #d92128;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .course-info-content { padding: 20px 25px; }
+        .course-info-content p { margin: 10px 0; }
+        .info-label { font-weight: bold; color: #333; display: inline-block; width: 120px; }
+        .fee-note { font-size: 14px; color: #666; display: block; margin-left: 120px; margin-top: 4px; }
+        .bank-info { margin-left: 120px; margin-top: 4px; line-height: 1.8; color: #d92128; font-weight: bold; }
+        
+        @media (max-width: 600px) {
+            .info-label { display: block; width: 100%; margin-bottom: 4px; color: #d92128; border-bottom: 1px dashed #eee; padding-bottom: 4px; margin-top: 15px; }
+            .fee-note, .bank-info { margin-left: 0; }
+        }
+
+        /* 特價組合黑金卡片 */
+        .combo-box {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 12px;
+            padding: 35px 30px;
+            margin: 50px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 1px solid #444;
+            color: #fff;
+        }
+        .combo-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+            font-size: 26px;
+            border-bottom: 1px dashed #555;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .combo-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .combo-item:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+        .combo-title { font-size: 20px; font-weight: bold; margin-bottom: 10px; line-height: 1.4; }
+        .combo-price { font-size: 30px; color: #ffd700; font-weight: 900; }
+        .combo-tag {
+            background-color: #d92128;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-right: 10px;
+            vertical-align: middle;
         }
 
         /* 表單樣式 */
-        .form-section { margin-top: 60px; padding: 35px 30px; background-color: #fafafa; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .form-section { padding: 35px 30px; background-color: #fafafa; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #222; }
         input[type="text"], input[type="email"], input[type="number"], select, textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; background-color: #fff; }
@@ -80,62 +139,16 @@
             box-shadow: 0 4px 12px rgba(217, 33, 40, 0.3);
             transition: all 0.3s ease;
         }
-        .info-btn:hover { 
-            background-color: #b01a20; 
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(217, 33, 40, 0.4);
-        }
+        .info-btn:hover { background-color: #b01a20; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 16px rgba(217, 33, 40, 0.4); }
 
         /* 頁尾與懸浮按鈕樣式 */
-        .site-footer {
-            background-color: #000;
-            color: #6b7280;
-            text-align: center;
-            padding: 32px 20px;
-            font-size: 14px;
-            margin-top: 60px;
-        }
-        
-        .fab-container {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 50;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: flex-end;
-        }
-
-        .fab-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-        }
-
-        .fab-btn:hover {
-            transform: translateY(-4px);
-        }
-
-        .fab-ig {
-            background: linear-gradient(to top right, #f09433, #dc2743, #bc1888);
-            color: white;
-        }
+        .site-footer { background-color: #000; color: #6b7280; text-align: center; padding: 32px 20px; font-size: 14px; margin-top: 60px; }
+        .fab-container { position: fixed; bottom: 24px; right: 24px; z-index: 50; display: flex; flex-direction: column; gap: 16px; align-items: flex-end; }
+        .fab-btn { display: flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; font-size: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease; }
+        .fab-btn:hover { transform: translateY(-4px); }
+        .fab-ig { background: linear-gradient(to top right, #f09433, #dc2743, #bc1888); color: white; }
         .fab-ig:hover { opacity: 0.9; }
-
-        .fab-line {
-            background-color: white;
-            color: #00B900;
-            border: 2px solid #00B900;
-        }
+        .fab-line { background-color: white; color: #00B900; border: 2px solid #00B900; }
         .fab-line:hover { background-color: #f9f9f9; }
         .fab-line img { width: 26px; height: 26px; }
     </style>
@@ -174,16 +187,19 @@
 
     <!-- 課程一：報名資訊區塊 -->
     <div class="course-info-box">
-        <p><span class="info-label">【課程日期】</span>2026 / 10 / 24（六）</p>
-        <p><span class="info-label">【課程時間】</span>09:00am - 16:00pm（中間休息一小時）<br><span class="fee-note" style="margin-top:0;">08:40am 開始報到</span></p>
-        <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
-        <p><span class="info-label">【招生名額】</span>16位額滿</p>
-        <p><span class="info-label">【課程費用】</span>NT$5500<span class="fee-note">費用包含︰ROCKPODS軟拔罐 / ROCKFloss巫毒帶 / ROCKTape肌貼*2</span></p>
-        <p><span class="info-label">【繳費方式】</span></p>
-        <div class="bank-info">
-            收款銀行︰013 國泰世華-信安分行<br>
-            收款帳號︰2270-3500-4968<br>
-            收款戶名︰詠友行銷股份有限公司
+        <div class="course-info-header">📋 系列課程 1 報名資訊</div>
+        <div class="course-info-content">
+            <p><span class="info-label">【課程日期】</span>2026 / 10 / 24（六）</p>
+            <p><span class="info-label">【課程時間】</span>09:00am - 16:00pm（中間休息一小時）<br><span class="fee-note" style="margin-top:0;">08:40am 開始報到</span></p>
+            <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
+            <p><span class="info-label">【招生名額】</span>16位額滿</p>
+            <p><span class="info-label">【課程費用】</span><strong style="color: #d92128; font-size: 18px;">NT$5,500</strong><span class="fee-note">費用包含︰ROCKPODS軟拔罐 / ROCKFloss巫毒帶 / ROCKTape肌貼*2</span></p>
+            <p><span class="info-label">【繳費方式】</span></p>
+            <div class="bank-info">
+                收款銀行︰013 國泰世華-信安分行<br>
+                收款帳號︰2270-3500-4968<br>
+                收款戶名︰詠友行銷股份有限公司
+            </div>
         </div>
     </div>
 
@@ -203,13 +219,11 @@
 
     <!-- 影片插入區塊 -->
     <div style="margin: 30px 0;">
-        <!-- 第一支影片 -->
         <h4 style="color: #d92128; margin-bottom: 12px; font-size: 18px;">▶️ 課程相關影音：髖關節影響足弓高低！</h4>
         <div class="video-container" style="margin-bottom: 30px;">
             <iframe src="https://www.youtube.com/embed/Z-M4ssdx-5E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="髖關節影響足弓高低！"></iframe>
         </div>
         
-        <!-- 第二支影片 -->
         <h4 style="color: #d92128; margin-bottom: 12px; font-size: 18px;">▶️ 課程相關影音：跑姿不迷失-核心穩定讓你跑更快、不受傷</h4>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/WZJPGw2tDes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="跑姿不迷失-核心穩定讓你跑更快、不受傷"></iframe>
@@ -218,16 +232,19 @@
 
     <!-- 課程二：報名資訊區塊 -->
     <div class="course-info-box">
-        <p><span class="info-label">【課程日期】</span>2026 / 11 / 21（六）</p>
-        <p><span class="info-label">【課程時間】</span>13:00pm - 17:00pm<br><span class="fee-note" style="margin-top:0;">12:40pm 開始報到</span></p>
-        <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
-        <p><span class="info-label">【招生名額】</span>16位額滿</p>
-        <p><span class="info-label">【課程費用】</span>NT$1500<span class="fee-note">費用包含︰ROCKTape肌貼*2</span></p>
-        <p><span class="info-label">【繳費方式】</span></p>
-        <div class="bank-info">
-            收款銀行︰013 國泰世華-信安分行<br>
-            收款帳號︰2270-3500-4968<br>
-            收款戶名︰詠友行銷股份有限公司
+        <div class="course-info-header">📋 系列課程 2 報名資訊</div>
+        <div class="course-info-content">
+            <p><span class="info-label">【課程日期】</span>2026 / 11 / 21（六）</p>
+            <p><span class="info-label">【課程時間】</span>13:00pm - 17:00pm<br><span class="fee-note" style="margin-top:0;">12:40pm 開始報到</span></p>
+            <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
+            <p><span class="info-label">【招生名額】</span>16位額滿</p>
+            <p><span class="info-label">【課程費用】</span><strong style="color: #d92128; font-size: 18px;">NT$1,500</strong><span class="fee-note">費用包含︰ROCKTape肌貼*2</span></p>
+            <p><span class="info-label">【繳費方式】</span></p>
+            <div class="bank-info">
+                收款銀行︰013 國泰世華-信安分行<br>
+                收款帳號︰2270-3500-4968<br>
+                收款戶名︰詠友行銷股份有限公司
+            </div>
         </div>
     </div>
 
@@ -256,14 +273,33 @@
     </div>
 
     <!-- 購買提醒小區塊 -->
-    <div style="margin-top: 30px; background: #fff4f4; padding: 20px; border-left: 5px solid #d92128; border-radius: 0 8px 8px 0;">
-        <p style="margin: 0; font-size: 15px; color: #d92128;"><strong>💡 課程與產品開通說明</strong><br>
-        報名並對帳完成後，我們將寄出 <strong>RockBand Flex 實體阻力帶 (輕/中阻力隨機)</strong>，並將 YouTube 觀看權限開通至您的 Email。</p>
+    <div class="course-info-box" style="margin-top: 30px;">
+        <div class="course-info-header" style="background-color: #ff9800;">💡 線上課程與實體產品開通說明</div>
+        <div class="course-info-content">
+            <p style="margin: 0; font-size: 15px; color: #333;">報名並對帳完成後，我們將寄出 <strong>RockBand Flex 實體阻力帶 (輕/中阻力隨機)</strong>，並將 YouTube 專屬觀看權限開通至您的 Email。</p>
+            <p><span class="info-label" style="margin-top: 10px;">【課程費用】</span><strong style="color: #d92128; font-size: 18px;">NT$2,980</strong></p>
+        </div>
+    </div>
+
+    <!-- 🌟 特價組合黑金卡片 -->
+    <div class="combo-box">
+        <h3>🔥 超值組合方案 (強烈推薦)</h3>
+        
+        <div class="combo-item">
+            <div class="combo-title"><span class="combo-tag">9折優惠</span>實體系列 1+2 雙課組合</div>
+            <div class="combo-price">特價 NT$6,300 <span style="font-size:16px; color:#aaa; text-decoration:line-through; font-weight:normal;">(原價 NT$7,000)</span></div>
+        </div>
+
+        <div class="combo-item">
+            <div class="combo-title"><span class="combo-tag" style="background-color:#ff9800;">最強 79 折</span>跑者全方位備戰 1+2+3 (實體＋線上)</div>
+            <div class="combo-price">特價 NT$7,880 <span style="font-size:16px; color:#aaa; text-decoration:line-through; font-weight:normal;">(原價 NT$9,980)</span></div>
+        </div>
+        <p style="font-size: 14px; color: #bbb; margin-top: 20px; margin-bottom: 0;">※ 請於下方報名表單直接選擇您欲購買的方案 ※</p>
     </div>
 
     <!-- 報名表單 -->
     <div class="form-section">
-        <h2 style="margin-top:0; border-left:none; background:none; color:#d92128; border-bottom: 2px solid #d92128; padding-left:0;">線上報名表</h2>
+        <h2 style="margin-top:0; border-left:none; background:none; color:#d92128; border-bottom: 2px solid #d92128; padding-left:0; border-radius: 0;">線上報名表</h2>
         <form id="regForm">
             <div class="form-group">
                 <label for="name">姓名 *</label>
@@ -281,14 +317,14 @@
                     <option value="" disabled selected>✓ 請展開選擇您要報名的方案</option>
                     
                     <optgroup label="── 🔹 單堂課程 ──">
-                        <option value="10 / 24（六） 實體｜Tape × Floss × Pods（跑者工具整合實戰） NT$5500">10 / 24（六） 實體｜Tape × Floss × Pods (NT$5500)</option>
-                        <option value="11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 NT$1500">11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 (NT$1500)</option>
-                        <option value="線上 RockBand Flex 多環阻力帶線上課程組 NT$2980">線上｜RockBand Flex 多環阻力帶線上課程 (NT$2980)</option>
+                        <option value="10 / 24（六） 實體｜Tape × Floss × Pods（跑者工具整合實戰） NT$5500">10 / 24（六） 實體｜Tape × Floss × Pods (NT$5,500)</option>
+                        <option value="11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 NT$1500">11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 (NT$1,500)</option>
+                        <option value="線上 RockBand Flex 多環阻力帶線上課程組 NT$2980">線上｜RockBand Flex 多環阻力帶線上課程 (NT$2,980)</option>
                     </optgroup>
 
                     <optgroup label="── 🔥 超值組合方案 (強烈推薦) 🔥 ──">
-                        <option value="實體系列課程1+實體系列課程2 特價9折 NT$6300">⭐️ 【9折優惠】實體系列 1+2 雙課組合 ➔ 特價 NT$6300</option>
-                        <option value="跑者全方位備戰 系列課程1+2+3 特價79折 NT$7880">👑 【最強79折】跑者全方位備戰 1+2+3 ➔ 特價 NT$7880</option>
+                        <option value="實體系列課程1+實體系列課程2 特價9折 NT$6300">⭐️ 【9折優惠】實體系列 1+2 雙課組合 ➔ 特價 NT$6,300</option>
+                        <option value="跑者全方位備戰 系列課程1+2+3 特價79折 NT$7880">👑 【最強79折】跑者全方位備戰 1+2+3 ➔ 特價 NT$7,880</option>
                     </optgroup>
                 </select>
             </div>
