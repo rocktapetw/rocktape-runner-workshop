@@ -16,31 +16,59 @@
         ul { margin-bottom: 20px; }
         li { margin-bottom: 8px; }
         
+        /* 課程資訊區塊樣式 */
+        .course-info-box {
+            background-color: #f9f9f9;
+            padding: 20px 25px;
+            border-radius: 8px;
+            border-left: 5px solid #d92128;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+        .course-info-box p { margin: 8px 0; }
+        .course-info-box .info-label { font-weight: bold; color: #333; display: inline-block; width: 120px; }
+        .course-info-box .fee-note { font-size: 14px; color: #666; display: block; margin-left: 120px; margin-top: 4px; }
+        .course-info-box .bank-info { margin-left: 120px; margin-top: 4px; line-height: 1.8; }
+        
+        @media (max-width: 600px) {
+            .course-info-box .info-label { display: block; width: 100%; margin-bottom: 4px; color: #d92128; }
+            .course-info-box .fee-note, .course-info-box .bank-info { margin-left: 0; }
+        }
+
         /* 表單樣式 */
-        .form-section { margin-top: 60px; padding: 30px; background-color: #fafafa; border-radius: 8px; border: 1px solid #ddd; }
+        .form-section { margin-top: 60px; padding: 35px 30px; background-color: #fafafa; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; }
-        input[type="text"], input[type="email"], input[type="number"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
-        button[type="submit"] { background-color: #d92128; color: white; padding: 15px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%; font-weight: bold; transition: background 0.3s; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #222; }
+        input[type="text"], input[type="email"], input[type="number"], select, textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; background-color: #fff; }
+        select { cursor: pointer; border: 2px solid #e0e0e0; transition: border-color 0.3s; }
+        select:focus { border-color: #d92128; outline: none; }
+        
+        button[type="submit"] { background-color: #d92128; color: white; padding: 15px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%; font-weight: bold; transition: background 0.3s; margin-top: 10px; }
         button[type="submit"]:hover { background-color: #b01a20; }
         #loadingMsg { display: none; text-align: center; color: #d92128; font-weight: bold; margin-top: 15px; }
 
         /* 更多說明按鈕樣式 */
         .info-btn {
             display: inline-block;
-            padding: 10px 24px;
-            background-color: #fff;
-            color: #d92128;
-            border: 2px solid #d92128;
-            border-radius: 4px;
+            padding: 12px 32px;
+            background-color: #d92128;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(217, 33, 40, 0.3);
             transition: all 0.3s ease;
         }
-        .info-btn:hover { background-color: #d92128; color: #fff; }
+        .info-btn:hover { 
+            background-color: #b01a20; 
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(217, 33, 40, 0.4);
+        }
 
-        /* --- 新增：頁尾與懸浮按鈕樣式 --- */
+        /* 頁尾與懸浮按鈕樣式 */
         .site-footer {
             background-color: #000;
             color: #6b7280;
@@ -114,7 +142,6 @@
 
     <!-- 課程一 -->
     <h2>實體系列課程1 [Tape × Floss × Pods｜跑者工具整合實戰]</h2>
-    <p><strong>課程時間：</strong> 10/24｜09:00–16:00<br><strong>地點：</strong> 森林跑站</p>
     
     <h3>課程主軸：跑前準備 × 跑中支援 × 跑後恢復</h3>
     <p>一場完整的跑步訓練，不只是從起跑開始，也不會在停下腳步後立刻結束。這堂 6 小時實戰 Workshop，將整合 ROCKTAPE 三項常見工具：<span class="highlight">RockTape 運動肌貼 × RockFloss 加壓帶 × RockPods 軟式拔罐</span>。</p>
@@ -126,9 +153,23 @@
         <li><strong>跑後恢復｜從放鬆重新回到動作：</strong>RockPods 跑後恢復應用、RockFloss 壓縮與動態操作、如何區分準備與恢復的操作邏輯。</li>
     </ul>
 
+    <!-- 課程一：報名資訊區塊 -->
+    <div class="course-info-box">
+        <p><span class="info-label">【課程日期】</span>2026 / 10 / 24（六）</p>
+        <p><span class="info-label">【課程時間】</span>09:00am - 16:00pm（中間休息一小時）<br><span class="fee-note" style="margin-top:0;">08:40am 開始報到</span></p>
+        <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
+        <p><span class="info-label">【招生名額】</span>16位額滿</p>
+        <p><span class="info-label">【課程費用】</span>NT$5500<span class="fee-note">費用包含︰ROCKPODS軟拔罐 / ROCKFloss巫毒帶 / ROCKTape肌貼*2</span></p>
+        <p><span class="info-label">【繳費方式】</span></p>
+        <div class="bank-info">
+            收款銀行︰013 國泰世華-信安分行<br>
+            收款帳號︰2270-3500-4968<br>
+            收款戶名︰詠友行銷股份有限公司
+        </div>
+    </div>
+
     <!-- 課程二 -->
     <h2>實體系列課程2 [跑步運動分析與運動肌貼應用]</h2>
-    <p><strong>課程時間：</strong> 11/21｜13:00–17:00<br><strong>地點：</strong> 森林跑站</p>
     
     <h3>課程主軸：看懂跑步 × 找出問題 × 修正動作 × 肌貼輔助</h3>
     <p>「跑得好、跑得遠」不只是靠苦練，更需要對自己的動作有足夠的理解。這堂課將從跑步動作分析出發，帶你理解跑步動作中的基本原則，進一步辨識常見問題，並思考如何透過動作調整與 RockTape 運動肌貼，提供適當的感覺輸入與動作輔助。</p>
@@ -141,6 +182,21 @@
         <li><strong>RockTape 與動作整合：</strong>運動肌貼與感覺輸入、足部/踝關節/膝部/髖部跑步應用、貼紮前後比較。</li>
     </ul>
 
+    <!-- 課程二：報名資訊區塊 -->
+    <div class="course-info-box">
+        <p><span class="info-label">【課程日期】</span>2026 / 11 / 21（六）</p>
+        <p><span class="info-label">【課程時間】</span>13:00pm - 17:00pm<br><span class="fee-note" style="margin-top:0;">12:40pm 開始報到</span></p>
+        <p><span class="info-label">【課程地點】</span>森林跑站 (台北市大安區龍安里新生南路二段60號)</p>
+        <p><span class="info-label">【招生名額】</span>16位額滿</p>
+        <p><span class="info-label">【課程費用】</span>NT$1500<span class="fee-note">費用包含︰ROCKTape肌貼*2</span></p>
+        <p><span class="info-label">【繳費方式】</span></p>
+        <div class="bank-info">
+            收款銀行︰013 國泰世華-信安分行<br>
+            收款帳號︰2270-3500-4968<br>
+            收款戶名︰詠友行銷股份有限公司
+        </div>
+    </div>
+
     <!-- 課程三 -->
     <h2>線上系列課程3 [RockBand Flex 多環阻力帶線上課程組]</h2>
     <p><strong>授課方式：</strong>購買後開通 YouTube 專屬權限，永久不限次觀看（費用含一條 RockBand Flex 多環阻力帶實體產品）。</p>
@@ -148,7 +204,7 @@
     <h3>打破空間限制，一條阻力帶搞定活動度與控制力</h3>
     <p>專利「多環節設計」與「數字標示」，讓你精準控制每一次的伸展幅度與發力感受，免去手部纏繞的疲勞。只要套入手腳，隨時隨地都能進行高效訓練。</p>
 
-    <!-- 圖片區塊 (只需放一張最具代表性的情境圖) -->
+    <!-- 圖片區塊 -->
     <div style="text-align: center; margin: 30px 0;">
         <img src="hero.jpg" alt="RockBand Flex 運動情境" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     </div>
@@ -161,7 +217,7 @@
     </ul>
     
     <!-- 點我看更多說明按鈕 -->
-    <div style="text-align: center; margin: 25px 0;">
+    <div style="text-align: center; margin: 35px 0;">
         <a href="https://rocktapetw.github.io/RockBand-Flex/?utm_term=band+flex+%E7%B7%9A%E4%B8%8A%E8%AA%B2" target="_blank" class="info-btn">點我看更多說明</a>
     </div>
 
@@ -188,10 +244,18 @@
             <div class="form-group">
                 <label for="course">欲報名課程 *</label>
                 <select id="course" name="course" required>
-                    <option value="" disabled selected>請選擇課程</option>
-                    <option value="10/24 實體｜Tape × Floss × Pods">10/24 實體｜Tape × Floss × Pods (跑者工具整合實戰)</option>
-                    <option value="11/21 實體｜跑步運動分析與運動肌貼應用">11/21 實體｜跑步運動分析與運動肌貼應用</option>
-                    <option value="線上｜RockBand Flex 多環阻力帶線上課程組">線上｜RockBand Flex 多環阻力帶線上課程組</option>
+                    <option value="" disabled selected>✓ 請展開選擇您要報名的方案</option>
+                    
+                    <optgroup label="── 🔹 單堂課程 ──">
+                        <option value="10 / 24（六） 實體｜Tape × Floss × Pods（跑者工具整合實戰） NT$5500">10 / 24（六） 實體｜Tape × Floss × Pods (NT$5500)</option>
+                        <option value="11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 NT$1500">11 / 21（六） 實體｜跑步運動分析與運動肌貼應用 (NT$1500)</option>
+                        <option value="線上 RockBand Flex 多環阻力帶線上課程組 NT$2980">線上｜RockBand Flex 多環阻力帶線上課程 (NT$2980)</option>
+                    </optgroup>
+
+                    <optgroup label="── 🔥 超值組合方案 (強烈推薦) 🔥 ──">
+                        <option value="實體系列課程1+實體系列課程2 特價9折 NT$6300">⭐️ 【9折優惠】實體系列 1+2 雙課組合 ➔ 特價 NT$6300</option>
+                        <option value="跑者全方位備戰 系列課程1+2+3 特價79折 NT$7880">👑 【最強79折】跑者全方位備戰 1+2+3 ➔ 特價 NT$7880</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -210,7 +274,7 @@
                 <textarea id="notes" name="notes" rows="3" placeholder="如有舊傷、特殊需求或發票開立需求請填寫於此"></textarea>
             </div>
 
-            <button type="submit" id="submitBtn">送出報名資料</button>
+            <button type="submit" id="submitBtn">確認資料並送出報名</button>
             <div id="loadingMsg">資料傳送中，請稍候...</div>
         </form>
     </div>
