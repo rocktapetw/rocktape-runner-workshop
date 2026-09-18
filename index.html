@@ -35,6 +35,25 @@
             .course-info-box .fee-note, .course-info-box .bank-info { margin-left: 0; }
         }
 
+        /* 影片響應式區塊樣式 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         /* 表單樣式 */
         .form-section { margin-top: 60px; padding: 35px 30px; background-color: #fafafa; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .form-group { margin-bottom: 20px; }
@@ -181,6 +200,21 @@
         <li><strong>從分析走向動作修正：</strong>動作提示與跑姿修正概念、選擇優先調整的問題、避免一次修正過多動作。</li>
         <li><strong>RockTape 與動作整合：</strong>運動肌貼與感覺輸入、足部/踝關節/膝部/髖部跑步應用、貼紮前後比較。</li>
     </ul>
+
+    <!-- 影片插入區塊 -->
+    <div style="margin: 30px 0;">
+        <!-- 第一支影片 -->
+        <h4 style="color: #d92128; margin-bottom: 12px; font-size: 18px;">▶️ 課程相關影音：髖關節影響足弓高低！</h4>
+        <div class="video-container" style="margin-bottom: 30px;">
+            <iframe src="https://www.youtube.com/embed/Z-M4ssdx-5E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="髖關節影響足弓高低！"></iframe>
+        </div>
+        
+        <!-- 第二支影片 -->
+        <h4 style="color: #d92128; margin-bottom: 12px; font-size: 18px;">▶️ 課程相關影音：跑姿不迷失-核心穩定讓你跑更快、不受傷</h4>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/WZJPGw2tDes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="跑姿不迷失-核心穩定讓你跑更快、不受傷"></iframe>
+        </div>
+    </div>
 
     <!-- 課程二：報名資訊區塊 -->
     <div class="course-info-box">
