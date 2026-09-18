@@ -6,7 +6,7 @@
     <title>ROCKTAPE RUN READY｜跑者全方位備戰 Workshop</title>
     <style>
         body { font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f8f9fa; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); min-height: 100vh; }
         h1, h2, h3 { color: #d92128; /* ROCKTAPE 紅色 */ }
         h1 { font-size: 28px; border-bottom: 2px solid #d92128; padding-bottom: 10px; margin-bottom: 30px;}
         h2 { font-size: 22px; margin-top: 40px; background: #f1f1f1; padding: 10px 15px; border-left: 5px solid #d92128; }
@@ -21,9 +21,76 @@
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; }
         input[type="text"], input[type="email"], input[type="number"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 16px; }
-        button { background-color: #d92128; color: white; padding: 15px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%; font-weight: bold; transition: background 0.3s; }
-        button:hover { background-color: #b01a20; }
+        button[type="submit"] { background-color: #d92128; color: white; padding: 15px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%; font-weight: bold; transition: background 0.3s; }
+        button[type="submit"]:hover { background-color: #b01a20; }
         #loadingMsg { display: none; text-align: center; color: #d92128; font-weight: bold; margin-top: 15px; }
+
+        /* 更多說明按鈕樣式 */
+        .info-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #fff;
+            color: #d92128;
+            border: 2px solid #d92128;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .info-btn:hover { background-color: #d92128; color: #fff; }
+
+        /* --- 新增：頁尾與懸浮按鈕樣式 --- */
+        .site-footer {
+            background-color: #000;
+            color: #6b7280;
+            text-align: center;
+            padding: 32px 20px;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+        
+        .fab-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .fab-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+        }
+
+        .fab-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .fab-ig {
+            background: linear-gradient(to top right, #f09433, #dc2743, #bc1888);
+            color: white;
+        }
+        .fab-ig:hover { opacity: 0.9; }
+
+        .fab-line {
+            background-color: white;
+            color: #00B900;
+            border: 2px solid #00B900;
+        }
+        .fab-line:hover { background-color: #f9f9f9; }
+        .fab-line img { width: 26px; height: 26px; }
     </style>
 </head>
 <body>
@@ -93,6 +160,11 @@
         <li><strong>四大線上模組：</strong>跟著專業教練示範，從「跑前動態喚醒」、「核心穩定控制」、「下肢肌力強化」到「跑後深度恢復」，完整發揮阻力帶最大效益。</li>
     </ul>
     
+    <!-- 點我看更多說明按鈕 -->
+    <div style="text-align: center; margin: 25px 0;">
+        <a href="https://rocktapetw.github.io/RockBand-Flex/?utm_term=band+flex+%E7%B7%9A%E4%B8%8A%E8%AA%B2" target="_blank" class="info-btn">點我看更多說明</a>
+    </div>
+
     <!-- 購買提醒小區塊 -->
     <div style="margin-top: 30px; background: #fff4f4; padding: 20px; border-left: 5px solid #d92128; border-radius: 0 8px 8px 0;">
         <p style="margin: 0; font-size: 15px; color: #d92128;"><strong>💡 課程與產品開通說明</strong><br>
@@ -144,19 +216,40 @@
     </div>
 </div>
 
+<!-- 懸浮客服與社群按鈕群組 -->
+<div class="fab-container">
+    <!-- IG 按鈕 -->
+    <a href="https://www.instagram.com/rocktape.tw" target="_blank" class="fab-btn fab-ig">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm3.98-10.822a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+        <span class="text-lg tracking-wide">官方 IG</span>
+    </a>
+
+    <!-- LINE 客服按鈕 -->
+    <a href="https://lin.ee/AkHEnuo" target="_blank" class="fab-btn fab-line">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
+        <span class="text-lg tracking-wide">課程諮詢</span>
+    </a>
+</div>
+
+<!-- 頁尾 Footer -->
+<footer class="site-footer">
+    <p>© 2026 OWNLIFE MARKETING CO., LTD. 詠友行銷股份有限公司. All rights reserved.</p>
+</footer>
+
 <script>
     // 您的專屬 Google Apps Script URL
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxtKByZP7O8cDekRaiHD6viEdBBHbvV5Q2EqaFensa1Lrl3uCum5-IhPfvXPZIZkZqUcA/exec';
 
     document.getElementById('regForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // 防止網頁重整
+        e.preventDefault();
         
         const btn = document.getElementById('submitBtn');
         const msg = document.getElementById('loadingMsg');
         btn.style.display = 'none';
         msg.style.display = 'block';
 
-        // 收集表單資料
         const formData = new URLSearchParams();
         formData.append('name', document.getElementById('name').value);
         formData.append('email', document.getElementById('email').value);
@@ -165,16 +258,14 @@
         formData.append('bank_acc', document.getElementById('bank_acc').value);
         formData.append('notes', document.getElementById('notes').value);
 
-        // 傳送資料到 Google Apps Script
         fetch(APPS_SCRIPT_URL, {
             method: 'POST',
             body: formData,
-            // 使用 no-cors 模式避免跨網域阻擋
             mode: 'no-cors'
         })
         .then(() => {
             alert('報名成功！我們已收到您的資料，對帳完成後將發送確認信件。');
-            document.getElementById('regForm').reset(); // 清空表單
+            document.getElementById('regForm').reset();
             btn.style.display = 'block';
             msg.style.display = 'none';
         })
